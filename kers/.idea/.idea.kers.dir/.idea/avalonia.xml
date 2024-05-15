@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Views/ClRoutesWindow.axaml" value="kers.csproj" />
+        <entry key="Views/MainWindow.axaml" value="kers.csproj" />
+        <entry key="Views/RegisterWindow.axaml" value="kers.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
