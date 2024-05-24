@@ -5,12 +5,9 @@ namespace kers.Models;
 
 public partial class Route
 {
-    public Route(int id, string name)
-    {
-        this.Id = id;
-        this.Name = name;
-    }
     public int Id { get; set; }
 
     public string Name { get; set; } = null!;
+
+    public virtual ICollection<Trip> Trips { get; set; } = new List<Trip>();
 }

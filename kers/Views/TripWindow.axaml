@@ -1,0 +1,36 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:kers.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:kers.Views"
+        mc:Ignorable="d" Width="1280" Height="720"
+        x:Class="kers.Views.TripWindow"
+        x:DataType="vm:TripWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="kers">
+    <StackPanel>
+        <Border Background="Blue">
+                   <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="5">Рейсы</TextBlock>
+        </Border>
+        <Border Background="Gainsboro">
+                   <TextBlock Text="{Binding selectedRoute.Name}" FontSize="36" HorizontalAlignment="Center" Margin="5"></TextBlock>
+        </Border>
+        <Grid  RowDefinitions="Auto" ColumnDefinitions="Auto,Auto,Auto" HorizontalAlignment="Center">
+                <Button Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize="20">←</Button>
+                <TextBlock Text="{Binding DateNow}" FontSize="36" HorizontalAlignment="Center" Margin="5" Grid.Row="0" Grid.Column="1"></TextBlock>
+                <Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" FontSize="20">→</Button>
+        </Grid>
+        <ListBox ItemsSource="{Binding TripList}" Name="TripsListBox">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <Ellipse Fill="Green" Width="10" Height="10"/>
+                        <TextBlock Text="{Binding Status.Name}" FontSize="20" HorizontalAlignment="Center" Margin="5"></TextBlock>
+                        <TextBlock Text="{Binding Timestart}" FontSize="20" HorizontalAlignment="Center" Margin="5"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</Window>    

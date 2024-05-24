@@ -19,7 +19,7 @@
         <TextBlock Text="Логин" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
         <TextBox Name="LoginTbox" Width="165" Margin="5"/>
         <TextBlock Text="Пароль" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
-        <TextBox Name="PasswordTbox" Width="165" Margin="5"/>
+        <TextBox Name="PasswordTbox" PasswordChar="*" Width="165" Margin="5"/>
         <Button Click="AuthClick" HorizontalAlignment="Center" Margin="5">Войти</Button>
         <Button Click="ToRegisterClick" HorizontalAlignment="Center" Margin="5">Зарегистрироваться</Button>
     </StackPanel>

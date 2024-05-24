@@ -12,10 +12,12 @@ using ReactiveUI;
 
 namespace kers.Views;
 
-public partial class ClRoutesWindow : Window
+public partial class TripWindow : Window
 {
-    public ClRoutesWindow()
+    public Route selectedRoute {get; set;}
+    public TripWindow(Route sr)
     {
+        this.selectedRoute = sr;
         InitializeComponent();
 #if DEBUG
         this.AttachDevTools();
@@ -24,16 +26,8 @@ public partial class ClRoutesWindow : Window
 
     private void InitializeComponent()
     {
-        this.DataContext = new ClRoutesWindowViewModel();
+        this.DataContext = new TripWindowViewModel(selectedRoute);
         AvaloniaXamlLoader.Load(this);
     }
 
-    private void SelectRoute(object? sender, SelectionChangedEventArgs e)
-    {
-        var listbox = (ListBox)sender;
-        var test = this.FindControl<TextBlock>("Test");
-        Route? selectedRoute = (Route)listbox.SelectedItem;
-        new TripWindow(selectedRoute).Show();
-        this.Close();
-    }
 }
