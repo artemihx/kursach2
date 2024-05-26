@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using System.Security.Cryptography;
 using System.Text;
+using Avalonia.Markup.Xaml;
 using kers.Models;
 using static kers.Core;
 
@@ -16,10 +17,15 @@ public partial class RegisterWindow : Window
     {
         InitializeComponent();
 
-        loginTbox = this.LoginTBox;
-        passwordTbox = this.PasswordTBox;
+        loginTbox = this.Find<TextBox>("LoginTbox");
+        passwordTbox = this.Find<TextBox>("PasswordTbox");
     }
-    
+
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
+    }
+
     public void ReturnClick(object sender, RoutedEventArgs args)
     {
         new MainWindow().Show();
@@ -33,7 +39,7 @@ public partial class RegisterWindow : Window
             var user = new User();
             if (Service.GetDbConnection().Users.Where(u => u.Login == loginTbox.Text).FirstOrDefault() == null)
             {
-                user.Login = LoginTBox.Text;
+                user.Login = loginTbox.Text;
                 user.Password = HashPassword(passwordTbox.Text);
                 Service.GetDbConnection().Users.Add(user);
                 Service.GetDbConnection().SaveChanges();

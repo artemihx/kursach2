@@ -17,11 +17,11 @@
                    <TextBlock Text="{Binding selectedRoute.Name}" FontSize="36" HorizontalAlignment="Center" Margin="5"></TextBlock>
         </Border>
         <Grid  RowDefinitions="Auto" ColumnDefinitions="Auto,Auto,Auto" HorizontalAlignment="Center">
-                <Button Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize="20">←</Button>
+                <Button Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize="20" Command="{Binding SelectDown}">←</Button>
                 <TextBlock Text="{Binding DateNow}" FontSize="36" HorizontalAlignment="Center" Margin="5" Grid.Row="0" Grid.Column="1"></TextBlock>
-                <Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" FontSize="20">→</Button>
+                <Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" FontSize="20" Command="{Binding SelectUp}">→</Button>
         </Grid>
-        <ListBox ItemsSource="{Binding TripList}" Name="TripsListBox">
+        <ListBox ItemsSource="{Binding TripList}" Name="TripsListBox" SelectionChanged="SelectTrip">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Margin="10">

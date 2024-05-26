@@ -31,7 +31,6 @@ public partial class ClRoutesWindow : Window
     private void SelectRoute(object? sender, SelectionChangedEventArgs e)
     {
         var listbox = (ListBox)sender;
-        var test = this.FindControl<TextBlock>("Test");
         Route? selectedRoute = (Route)listbox.SelectedItem;
         new TripWindow(selectedRoute).Show();
         this.Close();

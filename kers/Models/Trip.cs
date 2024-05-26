@@ -7,15 +7,23 @@ public partial class Trip
 {
     public int Id { get; set; }
 
-    public int? Routeid { get; set; }
+    public int Routeid { get; set; }
 
-    public int? Statusid { get; set; }
+    public int Statusid { get; set; }
 
-    public DateTime? Timestart { get; set; }
+    public int Autoid { get; set; }
+
+    public DateTime Timestart { get; set; }
 
     public DateTime? Timeend { get; set; }
 
-    public virtual Route? Route { get; set; }
+    public virtual Auto Auto { get; set; } = null!;
 
-    public virtual Status? Status { get; set; }
+    public virtual Route Route { get; set; } = null!;
+
+    public virtual Status Status { get; set; } = null!;
+
+    public virtual ICollection<Ticketontrip> Ticketontrips { get; set; } = new List<Ticketontrip>();
+
+    public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
 }

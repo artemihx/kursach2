@@ -3,6 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Markup.Xaml;
 using kers.Models;
 using kers.ViewModels;
 using static kers.Core;
@@ -17,10 +18,15 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-        loginTbox = this.LoginTbox;
-        passwordTBox = this.PasswordTbox;
+        loginTbox = this.Find<TextBox>("LoginTbox");
+        passwordTBox = this.Find<TextBox>("PasswordTbox");
     }
-    
+
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
+    }
+
     public void ToRegisterClick(object sender, RoutedEventArgs args)
     {
         new RegisterWindow().Show();
@@ -35,12 +41,13 @@ public partial class MainWindow : Window
                 .Where(u => u.Login == loginTbox.Text && u.Password == HashPassword(passwordTBox.Text)).FirstOrDefault();
             if (user != null)
             {
+                User.curUser = user;
                 new ClRoutesWindow().Show();
                 this.Close();
             }
             else
             {
-                this.Title.Text = "ОшибкаПИздец";
+                
             }
         }
     }

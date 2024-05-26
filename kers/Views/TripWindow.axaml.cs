@@ -30,4 +30,11 @@ public partial class TripWindow : Window
         AvaloniaXamlLoader.Load(this);
     }
 
+    private void SelectTrip(object? sender, SelectionChangedEventArgs e)
+    {
+        var listbox = (ListBox)sender;
+        Trip? selectedTrip = (Trip)listbox.SelectedItem;
+        new BuyTicketWindow(selectedTrip).Show();
+        this.Close();
+    }
 }
