@@ -134,6 +134,7 @@ public partial class PostgresContext : DbContext
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Fkpassportid).HasColumnName("fkpassportid");
             entity.Property(e => e.Fktripid).HasColumnName("fktripid");
+            entity.Property(e => e.Fkuserid).HasColumnName("fkuserid");
 
             entity.HasOne(d => d.Fkpassport).WithMany(p => p.Tickets)
                 .HasForeignKey(d => d.Fkpassportid)
@@ -144,6 +145,11 @@ public partial class PostgresContext : DbContext
                 .HasForeignKey(d => d.Fktripid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("ticket_fktripid_fkey");
+
+            entity.HasOne(d => d.Fkuser).WithMany(p => p.Tickets)
+                .HasForeignKey(d => d.Fkuserid)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("ticket_fkuserid_fkey");
         });
 
         modelBuilder.Entity<Ticketontrip>(entity =>
@@ -155,10 +161,6 @@ public partial class PostgresContext : DbContext
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Fkticketid).HasColumnName("fkticketid");
             entity.Property(e => e.Fktripid).HasColumnName("fktripid");
-
-            entity.HasOne(d => d.Fkticket).WithMany(p => p.Ticketontrips)
-                .HasForeignKey(d => d.Fkticketid)
-                .HasConstraintName("ticketontrip_fkticketid_fkey");
 
             entity.HasOne(d => d.Fktrip).WithMany(p => p.Ticketontrips)
                 .HasForeignKey(d => d.Fktripid)

@@ -35,4 +35,17 @@ public partial class ClRoutesWindow : Window
         new TripWindow(selectedRoute).Show();
         this.Close();
     }
+
+    private void Exit(object? sender, RoutedEventArgs e)
+    {
+        User.curUser = null;
+        new MainWindow().Show();
+        this.Close();
+    }
+
+    private void OpenProfilWindow(object? sender, RoutedEventArgs e)
+    {
+        new ProfilWindow().Show();
+        this.Close();
+    }
 }

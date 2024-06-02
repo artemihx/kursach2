@@ -11,7 +11,5 @@ public partial class Ticketontrip
 
     public int? Fktripid { get; set; }
 
-    public virtual Ticket? Fkticket { get; set; }
-
     public virtual Trip? Fktrip { get; set; }
 }

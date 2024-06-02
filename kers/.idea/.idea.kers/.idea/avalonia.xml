@@ -3,6 +3,8 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="App.axaml" value="kers.csproj" />
+        <entry key="Views/AddPasportWindow.axaml" value="kers.csproj" />
         <entry key="Views/BuyTicketWindow.axaml" value="kers.csproj" />
         <entry key="Views/ClRoutesWindow.axaml" value="kers.csproj" />
         <entry key="Views/MainWindow.axaml" value="kers.csproj" />

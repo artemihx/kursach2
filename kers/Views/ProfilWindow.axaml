@@ -1,0 +1,64 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:kers.ViewModels"
+        mc:Ignorable="d" Width="750" Height="600"
+        x:Class="kers.Views.ProfilWindow"
+        Title="ProfilWindow"
+        x:DataType="viewModels:ProfilWindowViewModel">
+  <TabControl Margin="5">
+  <TabItem Header="Паспорты">
+      <ScrollViewer>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Click="Exit">Назад</Button>
+                        <TextBlock Name="Title" Text="Добавление паспорта"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   Margin="25" FontSize="25"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+                        Имя <Span Foreground="red">*</Span>
+                </TextBlock>
+                <TextBox Name="NameTBox" Width="165" Margin="5"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+                        Фамилия <Span Foreground="red">*</Span>
+                </TextBlock>
+                <TextBox Name="LNameTBox" Width="165" Margin="5"/>
+                <TextBlock Text="Отчество" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+                <TextBox Name="MNameTBox" PasswordChar="*" Width="165" Margin="5"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+                        Серия паспорта <Span Foreground="red">*</Span>
+                </TextBlock>
+                <MaskedTextBox Mask="0000" Name="SerialTBox" Width="165" Margin="5"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+                        Номер паспорта <Span Foreground="red">*</Span>
+                </TextBlock>
+                <MaskedTextBox Mask="000000" Name="NumberTBox" Width="165" Margin="5"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+                        Дата выдачи <Span Foreground="red">*</Span>
+                </TextBlock>
+                <DatePicker Name="DatePicker" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Margin="5"></DatePicker>
+                <Button HorizontalAlignment="Center" Margin="5" Click="SavePassport">Сохранить</Button>
+                <TextBlock Text="Все паспорта"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Margin="25" FontSize="25"/>
+                <DataGrid Name= "PassportsList" Margin="5" ItemsSource="{Binding passports}" CanUserSortColumns="false"
+                          CanUserReorderColumns="False" SelectionMode="Single" IsReadOnly="True">
+                        <DataGrid.Columns>
+                                <DataGridTextColumn Header="Имя" Binding="{Binding Fname}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Фамилия" Binding="{Binding Lname}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Отчество" Binding="{Binding Mname}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Серия" Binding="{Binding Serail}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Номер" Binding="{Binding Number}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Дата получения" Binding="{Binding Datetaken}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                </DataGrid>
+                <Button HorizontalAlignment="Center" Margin="5" Click="DeletePassport">Удалить</Button>
+        </StackPanel>
+        </ScrollViewer>
+  </TabItem>
+  <TabItem Header="Билеты">
+    <TextBlock Margin="5">This is tab 2 content</TextBlock>
+  </TabItem>
+  </TabControl>
+</Window>

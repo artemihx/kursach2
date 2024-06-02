@@ -13,6 +13,7 @@ public partial class User
 
     public virtual ICollection<Passporttouser> Passporttousers { get; set; } = new List<Passporttouser>();
 
+    public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
+    
     public static User curUser { get; set; }
-
 }

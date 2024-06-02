@@ -11,7 +11,16 @@
         Title="kers">
     <StackPanel>
         <Border Background="Blue">
-                   <TextBlock FontSize="48" HorizontalAlignment="Center">Направления</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Выйти" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" Click="Exit"/>
+                <TextBlock Grid.Column="1" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Направления</TextBlock>
+                <Button Grid.Column="2" Content="Мой профиль" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5" Click="OpenProfilWindow"/>
+            </Grid>
         </Border>
         <ListBox ItemsSource="{Binding RoutesList}" Name="ListBoxRoutes" SelectionChanged="SelectRoute">
             <ListBox.ItemTemplate>

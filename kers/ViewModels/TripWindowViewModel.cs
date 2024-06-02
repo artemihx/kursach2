@@ -8,6 +8,7 @@ using Avalonia.Controls;
 using kers.Models;
 using Microsoft.EntityFrameworkCore;
 using ReactiveUI;
+using static kers.Core;
 
 namespace kers.ViewModels
 {
@@ -18,6 +19,7 @@ namespace kers.ViewModels
         public ICommand SelectDown { get; }
         
         private ObservableCollection<Trip> _tripList;
+        private string _infoPassenger;
         
         private DateOnly _dateNow;
         public TripWindowViewModel(Route sr)
@@ -62,7 +64,12 @@ namespace kers.ViewModels
             get => _dateNow;
             set => this.RaiseAndSetIfChanged(ref _dateNow, value);
         }
-        
+
+        public string InfoPassneger
+        {
+            get => _infoPassenger;
+            set => this.RaiseAndSetIfChanged(ref _infoPassenger, value);
+        }
     }
 }
 

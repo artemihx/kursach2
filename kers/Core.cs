@@ -1,4 +1,7 @@
-﻿namespace kers;
+﻿using System.Linq;
+using kers.Models;
+
+namespace kers;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -19,5 +22,16 @@ public class Core
             }
             return builder.ToString();
         }
+    }
+
+    public static bool CheckSeat(Trip selectTrip)
+    {
+        int countPassenger = Service.GetDbConnection().Tickets.Count();
+        Auto selectedAuto = Service.GetDbConnection().Autos.FirstOrDefault(a => a.Id == selectTrip.Autoid);
+        if (countPassenger <= selectedAuto.Maxcountpassneger)
+        {
+            return false;
+        }
+        return true;
     }
 }

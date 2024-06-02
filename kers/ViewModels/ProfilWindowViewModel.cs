@@ -6,18 +6,12 @@ using ReactiveUI;
 
 namespace kers.ViewModels;
 
-public class BuyTicketWindowViewModel : ViewModelBase
+public class ProfilWindowViewModel : ViewModelBase
 {
-    public Trip selectTrip { get; set; }
-
-
     private ObservableCollection<Passport> _passports;
 
-    public BuyTicketWindowViewModel(Trip tr)
+    public ProfilWindowViewModel()
     {
-        selectTrip = Service.GetDbConnection().Trips.Where(t => t == tr)
-            .Include(t => t.Route)
-            .Include(t => t.Auto).First();
         passports = new ObservableCollection<Passport>(Service.GetDbConnection()
             .Passporttousers
             .Where(ptu => ptu.Fkuser == User.curUser)
