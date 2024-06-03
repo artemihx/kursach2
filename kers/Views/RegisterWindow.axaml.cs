@@ -17,8 +17,8 @@ public partial class RegisterWindow : Window
     {
         InitializeComponent();
 
-        loginTbox = this.Find<TextBox>("LoginTbox");
-        passwordTbox = this.Find<TextBox>("PasswordTbox");
+        loginTbox = this.Find<TextBox>("LoginTBox");
+        passwordTbox = this.Find<TextBox>("PasswordTBox");
     }
 
     private void InitializeComponent()

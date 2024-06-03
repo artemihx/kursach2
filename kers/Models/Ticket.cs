@@ -11,11 +11,9 @@ public partial class Ticket
 
     public int Fkpassportid { get; set; }
 
-    public int Fkuserid { get; set; }
-
     public virtual Passport Fkpassport { get; set; } = null!;
 
     public virtual Trip Fktrip { get; set; } = null!;
 
-    public virtual User Fkuser { get; set; } = null!;
+    public virtual ICollection<Ticketontrip> Ticketontrips { get; set; } = new List<Ticketontrip>();
 }

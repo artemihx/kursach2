@@ -129,12 +129,11 @@ public partial class PostgresContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("ticket_pkey");
 
-            entity.ToTable("ticket", "kursach2");
+            entity.ToTable("ticket", "kurs2");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Fkpassportid).HasColumnName("fkpassportid");
             entity.Property(e => e.Fktripid).HasColumnName("fktripid");
-            entity.Property(e => e.Fkuserid).HasColumnName("fkuserid");
 
             entity.HasOne(d => d.Fkpassport).WithMany(p => p.Tickets)
                 .HasForeignKey(d => d.Fkpassportid)
@@ -145,11 +144,6 @@ public partial class PostgresContext : DbContext
                 .HasForeignKey(d => d.Fktripid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("ticket_fktripid_fkey");
-
-            entity.HasOne(d => d.Fkuser).WithMany(p => p.Tickets)
-                .HasForeignKey(d => d.Fkuserid)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("ticket_fkuserid_fkey");
         });
 
         modelBuilder.Entity<Ticketontrip>(entity =>

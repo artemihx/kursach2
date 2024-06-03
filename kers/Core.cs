@@ -11,14 +11,12 @@ public class Core
     {
         using (SHA256 sha256Hash = SHA256.Create())
         {
-            // Хешируем пароль, преобразовывая его в массив байтов
             byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
 
-            // Преобразуем массив байтов в строку в шестнадцатеричном формате
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < bytes.Length; i++)
             {
-                builder.Append(bytes[i].ToString("x2")); // x2 форматирует каждый байт как двузначное шестнадцатеричное число
+                builder.Append(bytes[i].ToString("x2"));
             }
             return builder.ToString();
         }
@@ -26,12 +24,12 @@ public class Core
 
     public static bool CheckSeat(Trip selectTrip)
     {
-        int countPassenger = Service.GetDbConnection().Tickets.Count();
+        int countPassenger = Service.GetDbConnection().Tickets.Where(t => t.Fktripid == selectTrip.Id).Count();
         Auto selectedAuto = Service.GetDbConnection().Autos.FirstOrDefault(a => a.Id == selectTrip.Autoid);
-        if (countPassenger <= selectedAuto.Maxcountpassneger)
+        if (countPassenger < selectedAuto.Maxcountpassneger)
         {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 }

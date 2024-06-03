@@ -9,6 +9,7 @@ namespace kers.ViewModels;
 public class ProfilWindowViewModel : ViewModelBase
 {
     private ObservableCollection<Passport> _passports;
+    private ObservableCollection<Ticket> _tickets;
 
     public ProfilWindowViewModel()
     {
@@ -18,11 +19,20 @@ public class ProfilWindowViewModel : ViewModelBase
             .Include(ptu => ptu.Fkpassport)
             .Select(ptu => ptu.Fkpassport)
             .ToList());
+        tickets = new ObservableCollection<Ticket>(Service.GetDbConnection()
+        .Tickets
+        .Where(ti => ti.Fkpassport == ti.Fkpassport.)
     }
     
     public ObservableCollection<Passport> passports
     {
         get => _passports;
         set => this.RaiseAndSetIfChanged(ref _passports, value);
+    }
+
+    public ObservableCollection<Ticket> tickets
+    {
+        get => _tickets;
+        set => this.RaiseAndSetIfChanged(ref _tickets, value);
     }
 }

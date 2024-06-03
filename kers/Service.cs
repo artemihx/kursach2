@@ -4,13 +4,13 @@ namespace kers;
 
 public class Service
 {
-    private static PostgresContext? _db;
+    private static Gr621PoaseContext? _db;
 
-    public static PostgresContext GetDbConnection()
+    public static Gr621PoaseContext GetDbConnection()
     {
         if (_db == null)
         {
-            _db = new PostgresContext();
+            _db = new Gr621PoaseContext();
         }
 
         return _db;

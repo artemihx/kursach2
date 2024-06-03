@@ -22,7 +22,7 @@
                 </TextBlock>
                 <TextBox Name="LNameTBox" Width="165" Margin="5"/>
                 <TextBlock Text="Отчество" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
-                <TextBox Name="MNameTBox" PasswordChar="*" Width="165" Margin="5"/>
+                <TextBox Name="MNameTBox" Width="165" Margin="5"/>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
                         Серия паспорта <Span Foreground="red">*</Span>
                 </TextBlock>

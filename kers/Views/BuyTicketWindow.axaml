@@ -22,7 +22,7 @@
                     <DataTemplate>
                         <TextBlock>
                             <TextBlock.Text>
-                                <MultiBinding StringFormat="{}{1} {0} {2} {3}">
+                                <MultiBinding StringFormat="{}{1} {0} {2}-{3}">
                                     <Binding Path="Lname"/>
                                     <Binding Path="Fname"/>
                                     <Binding Path="Serail"/>

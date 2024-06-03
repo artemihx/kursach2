@@ -4,16 +4,19 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using kers.Models;
 using kers.ViewModels;
+using static kers.Core;
 
 namespace kers.Views;
 
 public partial class BuyTicketWindow : Window
 {
     private Trip selectedTrip { get; set; }
+    private ComboBox passportBox;
     public BuyTicketWindow(Trip tr)
     {
         this.selectedTrip = tr;
         InitializeComponent();
+        passportBox = this.Find<ComboBox>("ComboBoxPassport");
 #if DEBUG
         this.AttachDevTools();
 #endif
@@ -39,9 +42,30 @@ public partial class BuyTicketWindow : Window
 
     private void BuyBillet(object? sender, RoutedEventArgs e)
     {
-        if (ComboBoxPassport.SelectedItem != null)
+        Passport selectedPassport = passportBox.SelectedItem as Passport;
+        if (selectedPassport != null)
         {
-            
+            if(CheckSeat(selectedTrip))
+            {
+                try
+                {
+                    Ticket newTicket = new Ticket();
+                    newTicket.Fkpassportid = selectedPassport.Id;
+                    newTicket.Fktripid = selectedTrip.Id;
+                    Service.GetDbConnection().Tickets.Add(newTicket);
+                    Service.GetDbConnection().SaveChanges();
+                    new ClRoutesWindow().Show();
+                    this.Close();
+                }
+                catch (System.Exception)
+                {
+                    
+                }
+            }
+            else
+            {
+                
+            }
         }
     }
 }
