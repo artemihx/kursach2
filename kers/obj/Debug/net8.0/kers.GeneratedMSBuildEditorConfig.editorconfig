@@ -13,30 +13,33 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = kers
-build_property.ProjectDir = c:\Users\gr621_poase\Desktop\temp\kursach2\kers\
+build_property.ProjectDir = C:\Users\artemih\Desktop\kursach\kursach2\kers\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[c:/Users/gr621_poase/Desktop/temp/kursach2/kers/App.axaml]
+[C:/Users/artemih/Desktop/kursach/kursach2/kers/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[c:/Users/gr621_poase/Desktop/temp/kursach2/kers/Views/AddPasportWindow.axaml]
+[C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/AddPasportWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[c:/Users/gr621_poase/Desktop/temp/kursach2/kers/Views/BuyTicketWindow.axaml]
+[C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/BuyTicketWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[c:/Users/gr621_poase/Desktop/temp/kursach2/kers/Views/ClRoutesWindow.axaml]
+[C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/ClRoutesWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[c:/Users/gr621_poase/Desktop/temp/kursach2/kers/Views/MainWindow.axaml]
+[C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/EmployeeWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[c:/Users/gr621_poase/Desktop/temp/kursach2/kers/Views/ProfilWindow.axaml]
+[C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[c:/Users/gr621_poase/Desktop/temp/kursach2/kers/Views/RegisterWindow.axaml]
+[C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/ProfilWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[c:/Users/gr621_poase/Desktop/temp/kursach2/kers/Views/TripWindow.axaml]
+[C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/RegisterWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/TripWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

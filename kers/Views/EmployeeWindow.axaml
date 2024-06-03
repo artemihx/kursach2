@@ -1,0 +1,41 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="kers.Views.EmployeeWindow"
+        Title="EmployeeWindow">
+        <Grid>
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <Button Name="ExitButton" Content="Выйти" Margin="10" HorizontalAlignment="Left"/>
+                
+                <ScrollViewer Grid.Row="1" Grid.Column="0">
+                <StackPanel Margin="10">
+                        <TextBox Text="Поиск" Margin="0,0,0,10"/>
+                        <TextBlock Text="Направления" Margin="0,0,0,5"/>
+                        <ListBox Name="DirectionsListBox" Height="400"/>
+                </StackPanel>
+                </ScrollViewer>
+                
+                <ScrollViewer  Grid.Row="1" Grid.Column="1"> 
+                <StackPanel Margin="10">
+                        <TextBlock Text="Рейсы" Margin="0,0,0,5"/>
+                        <ListBox Name="FlightsListBox" Height="400"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,10,0,0">
+                                <Button Name="AddButton" Content="Добавить" Margin="5"/>
+                                <Button Name="ChangeStatusButton" Content="Изменить статус" Margin="5"/>
+                                <Button Name="PrintButton" Content="Печать" Margin="5"/>
+                        </StackPanel>
+                </StackPanel>
+                </ScrollViewer>
+        </Grid>
+</Window>

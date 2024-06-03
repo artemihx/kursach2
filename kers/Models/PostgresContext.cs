@@ -27,8 +27,6 @@ public partial class PostgresContext : DbContext
 
     public virtual DbSet<Ticket> Tickets { get; set; }
 
-    public virtual DbSet<Ticketontrip> Ticketontrips { get; set; }
-
     public virtual DbSet<Trip> Trips { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
@@ -129,7 +127,7 @@ public partial class PostgresContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("ticket_pkey");
 
-            entity.ToTable("ticket", "kurs2");
+            entity.ToTable("ticket", "kursach2");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Fkpassportid).HasColumnName("fkpassportid");
@@ -144,21 +142,6 @@ public partial class PostgresContext : DbContext
                 .HasForeignKey(d => d.Fktripid)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("ticket_fktripid_fkey");
-        });
-
-        modelBuilder.Entity<Ticketontrip>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("ticketontrip_pkey");
-
-            entity.ToTable("ticketontrip", "kursach2");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Fkticketid).HasColumnName("fkticketid");
-            entity.Property(e => e.Fktripid).HasColumnName("fktripid");
-
-            entity.HasOne(d => d.Fktrip).WithMany(p => p.Ticketontrips)
-                .HasForeignKey(d => d.Fktripid)
-                .HasConstraintName("ticketontrip_fktripid_fkey");
         });
 
         modelBuilder.Entity<Trip>(entity =>
@@ -207,6 +190,7 @@ public partial class PostgresContext : DbContext
             entity.Property(e => e.Password)
                 .HasColumnType("character varying")
                 .HasColumnName("password");
+            entity.Property(e => e.Role).HasColumnName("role");
         });
 
         OnModelCreatingPartial(modelBuilder);

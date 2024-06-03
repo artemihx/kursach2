@@ -23,7 +23,5 @@ public partial class Trip
 
     public virtual Status Status { get; set; } = null!;
 
-    public virtual ICollection<Ticketontrip> Ticketontrips { get; set; } = new List<Ticketontrip>();
-
     public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
 }

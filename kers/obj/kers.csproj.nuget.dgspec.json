@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\gr621_poase\\Desktop\\temp\\kursach2\\kers\\kers.csproj": {}
+    "C:\\Users\\artemih\\Desktop\\kursach\\kursach2\\kers\\kers.csproj": {}
   },
   "projects": {
-    "c:\\Users\\gr621_poase\\Desktop\\temp\\kursach2\\kers\\kers.csproj": {
+    "C:\\Users\\artemih\\Desktop\\kursach\\kursach2\\kers\\kers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\gr621_poase\\Desktop\\temp\\kursach2\\kers\\kers.csproj",
+        "projectUniqueName": "C:\\Users\\artemih\\Desktop\\kursach\\kursach2\\kers\\kers.csproj",
         "projectName": "kers",
-        "projectPath": "c:\\Users\\gr621_poase\\Desktop\\temp\\kursach2\\kers\\kers.csproj",
-        "packagesPath": "C:\\Users\\gr621_poase\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\gr621_poase\\Desktop\\temp\\kursach2\\kers\\obj\\",
+        "projectPath": "C:\\Users\\artemih\\Desktop\\kursach\\kursach2\\kers\\kers.csproj",
+        "packagesPath": "C:\\Users\\artemih\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\artemih\\Desktop\\kursach\\kursach2\\kers\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gr621_poase\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\artemih\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -101,6 +94,14 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "itext7.bouncy-castle-adapter": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             }
           },
           "imports": [
@@ -119,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -41,9 +41,19 @@ public partial class MainWindow : Window
                 .Where(u => u.Login == loginTbox.Text && u.Password == HashPassword(passwordTBox.Text)).FirstOrDefault();
             if (user != null)
             {
-                User.curUser = user;
-                new ClRoutesWindow().Show();
-                this.Close();
+                if (user.Role == 0)
+                {
+                    User.curUser = user;
+                    new ClRoutesWindow().Show();
+                    this.Close();
+                }
+                else if (user.Role == 1)
+                {
+                    User.curUser = user;
+                    new EmployeeWindow().Show();
+                    this.Close();
+                }
+                
             }
             else
             {

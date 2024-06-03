@@ -11,7 +11,9 @@ public partial class User
 
     public string Password { get; set; } = null!;
 
-    public virtual ICollection<Passporttouser> Passporttousers { get; set; } = new List<Passporttouser>();
+    public int Role { get; set; }
 
-    public static User curUser {get; set;}
+    public virtual ICollection<Passporttouser> Passporttousers { get; set; } = new List<Passporttouser>();
+    
+    public static User curUser { get; set; }
 }

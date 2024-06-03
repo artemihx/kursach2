@@ -39,6 +39,7 @@ public partial class RegisterWindow : Window
             var user = new User();
             if (Service.GetDbConnection().Users.Where(u => u.Login == loginTbox.Text).FirstOrDefault() == null)
             {
+                user.Role = 0;
                 user.Login = loginTbox.Text;
                 user.Password = HashPassword(passwordTbox.Text);
                 Service.GetDbConnection().Users.Add(user);

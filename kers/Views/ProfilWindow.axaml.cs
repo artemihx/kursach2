@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
@@ -6,6 +7,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using kers.Models;
 using kers.ViewModels;
+using static kers.Core;
 
 namespace kers.Views;
 
@@ -18,6 +20,11 @@ public partial class ProfilWindow : Window
     private TextBox numberTbox;
     private DatePicker datePicker;
     private DataGrid passportsList;
+
+    private ListBox ticketsList;
+    private TextBlock ticketDetail;
+    private Button returnButton;
+    private Button printButton;
     public ProfilWindow()
     {
         InitializeComponent();
@@ -28,6 +35,11 @@ public partial class ProfilWindow : Window
         numberTbox = this.Find<TextBox>("NumberTBox");
         datePicker = this.Find<DatePicker>("DatePicker");
         passportsList = this.Find<DataGrid>("PassportsList");
+
+        ticketsList = this.Find<ListBox>("TicketsUser");
+        ticketDetail = this.Find<TextBlock>("TicketDetails");
+        returnButton = this.Find<Button>("ButtonReturn");
+        printButton = this.Find<Button>("PrintButton");
 #if DEBUG
         this.AttachDevTools();
 #endif
@@ -97,5 +109,44 @@ public partial class ProfilWindow : Window
 
             }
         }
+    }
+
+    private void TicketsUser_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        if (ticketsList.SelectedItem is Ticket selectedTicket)
+        {
+            ticketDetail.Text = $"Маршрут: {selectedTicket.Fktrip.Route.Name}\n" +
+                                $"Время отправления: {selectedTicket.Fktrip.Timestart}\n" +
+                                $"Время прибытия: {selectedTicket.Fktrip.Timeend}\n" +
+                                $"ФИО: {selectedTicket.Fkpassport.Fname} {selectedTicket.Fkpassport.Lname}\n" +
+                                $"Паспорт: {selectedTicket.Fkpassport.Number}";
+            
+            ticketDetail.IsVisible = true;
+            returnButton.IsVisible = true;
+            printButton.IsVisible = true;
+        }
+        else
+        {
+            ticketDetail.IsVisible = false;
+            returnButton.IsVisible = false;
+            printButton.IsVisible = false;
+        }
+    }
+
+    private void ReturnTicket(object? sender, RoutedEventArgs e)
+    {
+        if (ticketsList.SelectedItem is Ticket selectedTicket)
+        {
+            Service.GetDbConnection().Tickets.Remove(selectedTicket);
+            Service.GetDbConnection().SaveChanges();
+            new ProfilWindow().Show();
+            this.Close();
+        }
+    }
+
+    private void PrintTicket(object? sender, RoutedEventArgs e)
+    {
+        if (ticketsList.SelectedItem is Ticket selectedTicket)
+            PrintTicketPDF(selectedTicket);
     }
 }
