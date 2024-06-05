@@ -23,6 +23,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/AddPasportWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/AddTripWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/BuyTicketWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

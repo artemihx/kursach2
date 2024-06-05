@@ -117,7 +117,6 @@ public partial class ProfilWindow : Window
         {
             ticketDetail.Text = $"Маршрут: {selectedTicket.Fktrip.Route.Name}\n" +
                                 $"Время отправления: {selectedTicket.Fktrip.Timestart}\n" +
-                                $"Время прибытия: {selectedTicket.Fktrip.Timeend}\n" +
                                 $"ФИО: {selectedTicket.Fkpassport.Fname} {selectedTicket.Fkpassport.Lname}\n" +
                                 $"Паспорт: {selectedTicket.Fkpassport.Number}";
             

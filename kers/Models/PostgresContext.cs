@@ -154,9 +154,6 @@ public partial class PostgresContext : DbContext
             entity.Property(e => e.Autoid).HasColumnName("autoid");
             entity.Property(e => e.Routeid).HasColumnName("routeid");
             entity.Property(e => e.Statusid).HasColumnName("statusid");
-            entity.Property(e => e.Timeend)
-                .HasColumnType("timestamp without time zone")
-                .HasColumnName("timeend");
             entity.Property(e => e.Timestart)
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("timestart");

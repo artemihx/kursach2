@@ -15,8 +15,6 @@ public partial class Trip
 
     public DateTime Timestart { get; set; }
 
-    public DateTime? Timeend { get; set; }
-
     public virtual Auto Auto { get; set; } = null!;
 
     public virtual Route Route { get; set; } = null!;

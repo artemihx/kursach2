@@ -1,0 +1,33 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:kers.ViewModels"
+        mc:Ignorable="d" Width="450" Height="450"
+        x:Class="kers.Views.AddTripWindow"
+        Title="AddTripWindow"
+        x:DataType="viewModels:AddTripViewModel">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">Авто</TextBlock>
+                <ComboBox Name="ComboBox" SelectedIndex="0" ItemsSource="{Binding Autos}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
+                        <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                        <TextBlock>
+                                                <TextBlock.Text>
+                                                        <MultiBinding StringFormat="{}{0} {1} Кол-во псжр: {2}">
+                                                                <Binding Path="Name"/>
+                                                                <Binding Path="Carnumber"/>
+                                                                <Binding Path="Maxcountpassneger"/>
+                                                        </MultiBinding>
+                                                </TextBlock.Text>
+                                        </TextBlock>
+                                </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">Дата и время отправления</TextBlock>
+                <DatePicker Name="DatePicker" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"></DatePicker>
+                <TimePicker Name="TimePicker" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"></TimePicker>
+                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Click="AddTrip">Сохранить</Button>
+                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Click="Exit">Выйти</Button>
+        </StackPanel>
+</Window>
