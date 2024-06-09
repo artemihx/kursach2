@@ -29,6 +29,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/BuyTicketWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/ChangeStatusWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/artemih/Desktop/kursach/kursach2/kers/Views/ClRoutesWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

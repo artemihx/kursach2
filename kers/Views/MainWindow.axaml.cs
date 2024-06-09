@@ -16,8 +16,8 @@ public partial class MainWindow : Window
     private TextBox passwordTBox;
     public MainWindow()
     {
+        CancelOldTrip();
         InitializeComponent();
-
         loginTbox = this.Find<TextBox>("LoginTbox");
         passwordTBox = this.Find<TextBox>("PasswordTbox");
     }
@@ -59,6 +59,20 @@ public partial class MainWindow : Window
             {
                 
             }
+        }
+    }
+    private void CancelOldTrip()
+    {
+        var oldTripList = Service.GetDbConnection().Trips.Where(t => t.Timestart < DateTime.Now && t.Statusid == 1)
+            .ToList();
+        if (oldTripList != null && oldTripList.Count > 0)
+        {
+            foreach (var trip in oldTripList)
+            {
+                trip.Statusid = 2;
+            }
+            Service.GetDbConnection().Trips.UpdateRange(oldTripList);
+            Service.GetDbConnection().SaveChanges();
         }
     }
 }

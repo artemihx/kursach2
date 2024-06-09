@@ -6,7 +6,10 @@
         mc:Ignorable="d" Width="750" Height="600"
         x:Class="kers.Views.ProfilWindow"
         Title="ProfilWindow"
-        x:DataType="viewModels:ProfilWindowViewModel">
+        x:DataType="viewModels:ProfilWindowViewModel"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="Default" 
+        ExtendClientAreaTitleBarHeightHint="30">
   <TabControl Margin="5">
   <TabItem Header="Паспорты">
       <ScrollViewer>

@@ -6,7 +6,10 @@
         mc:Ignorable="d" Width="450" Height="450"
         x:Class="kers.Views.AddTripWindow"
         Title="AddTripWindow"
-        x:DataType="viewModels:AddTripViewModel">
+        x:DataType="viewModels:AddTripViewModel"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="Default" 
+        ExtendClientAreaTitleBarHeightHint="30">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">Авто</TextBlock>
                 <ComboBox Name="ComboBox" SelectedIndex="0" ItemsSource="{Binding Autos}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">

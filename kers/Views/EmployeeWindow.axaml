@@ -7,7 +7,10 @@
         mc:Ignorable="d" Width="1024" Height="600"
         x:Class="kers.Views.EmployeeWindow"
         Title="EmployeeWindow"
-        x:DataType="vm:EmployeeWindowViewModel">
+        x:DataType="vm:EmployeeWindowViewModel"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="Default" 
+        ExtendClientAreaTitleBarHeightHint="30">
         
         <Window.Resources>
                 <local:StatusConverter x:Key="StatusConverter"/>
@@ -62,7 +65,7 @@
                                         <Button Command="{Binding ClearStatusCommand}" Margin="0,0,10,0">Очистить</Button>
                                 </StackPanel>
                 
-                                <ListBox ItemsSource="{Binding Trips}" Name="TripListBox" Height="400">
+                                <ListBox ItemsSource="{Binding Trips}" Name="TripListBox" Height="400" DoubleTapped="ChangeStatus">
                                         <ListBox.ItemTemplate>
                                                 <DataTemplate>
                                                         <StackPanel Orientation="Horizontal" Margin="5">
@@ -75,8 +78,7 @@
                                 </ListBox>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,10,0,0">
                                         <Button Name="AddButton" Content="Добавить" Margin="5" Click="OpenAddTripWindow"/>
-                                        <Button Name="ChangeStatusButton" Content="Изменить статус" Margin="5"/>
-                                        <Button Name="PrintButton" Content="Печать" Margin="5"/>
+                                        <Button Name="PrintButton" Content="Печать" Margin="5" Click="PrintInfo"/>
                                 </StackPanel>
                         </StackPanel>
                 </ScrollViewer>

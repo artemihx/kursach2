@@ -6,7 +6,10 @@
         mc:Ignorable="d" Width="650" Height="600"
         x:Class="kers.Views.AddPasportWindow"
         x:DataType="viewModels:BuyTicketWindowViewModel"
-        Title="AddPasportWindow">
+        Title="AddPasportWindow"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="Default" 
+        ExtendClientAreaTitleBarHeightHint="30">
         <ScrollViewer>
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
                 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Click="Exit">Назад</Button>

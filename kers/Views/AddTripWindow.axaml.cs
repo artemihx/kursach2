@@ -41,16 +41,20 @@ public partial class AddTripWindow : Window
             {
                 DateTime selectedDateTime = selectedDate.SelectedDate.Value.Date;
                 selectedDateTime += selectedTime.SelectedTime.Value;
-                Trip newTrip = new Trip()
+                if (selectedDateTime > DateTime.Now)
                 {
-                    Routeid = selectedRoute.Id,
-                    Autoid = selectedAuto.Id,
-                    Timestart = selectedDateTime
-                };
-                Service.GetDbConnection().Trips.Add(newTrip);
-                Service.GetDbConnection().SaveChanges();
-                new EmployeeWindow().Show();
-                this.Close();
+                    Trip newTrip = new Trip()
+                    {
+                        Routeid = selectedRoute.Id,
+                        Autoid = selectedAuto.Id,
+                        Statusid = 1,
+                        Timestart = selectedDateTime
+                    };
+                    Service.GetDbConnection().Trips.Add(newTrip);
+                    Service.GetDbConnection().SaveChanges();
+                    new EmployeeWindow().Show();
+                    this.Close();
+                }
             }
             catch (Exception exception)
             {

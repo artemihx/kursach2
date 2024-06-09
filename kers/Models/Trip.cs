@@ -22,4 +22,12 @@ public partial class Trip
     public virtual Status Status { get; set; } = null!;
 
     public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
+    
+    public bool HasFreeSeats
+    {
+        get
+        {
+            return Core.CheckSeat(this);
+        }
+    }
 }

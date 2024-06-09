@@ -70,6 +70,8 @@ namespace kers.ViewModels
             get => _infoPassenger;
             set => this.RaiseAndSetIfChanged(ref _infoPassenger, value);
         }
+        
+        
     }
 }
 

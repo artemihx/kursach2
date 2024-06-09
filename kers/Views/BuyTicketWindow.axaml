@@ -6,7 +6,10 @@
         mc:Ignorable="d" Width="650" Height="300"
         x:Class="kers.Views.BuyTicketWindow"
         x:DataType="viewModels:BuyTicketWindowViewModel"
-        Title="BuyTicketWindow">
+        Title="BuyTicketWindow"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="Default" 
+        ExtendClientAreaTitleBarHeightHint="30">
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Click="ReturnToTrip">Назад</Button>
         <Grid ColumnDefinitions="Auto, Auto, Auto" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
